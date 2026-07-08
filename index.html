@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom Lizard Soundboard</title>
+    <style>
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            
+            /* Background Image covering the whole page */
+            background-color: #40fd6c; 
+            background-image: url('background.png'); 
+            background-size: cover;
+            background-position: center top;
+        }
+
+        /* The specific Lizard Photo at top-left */
+        .corner-lizard {
+            position: absolute;
+            background-image: url('background.png');
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid white; /* Adds a nice border to make it pop */
+        }
+
+        .button-container { display: flex; gap: 20px; }
+
+        .soundBtn {
+            background-color: #f1e5d1; 
+            color: #333; 
+            padding: 20px 40px;
+            font-size: 20px; 
+            border: none; 
+            border-radius: 15px;
+            cursor: pointer; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.1s;
+        }
+        .soundBtn:active { transform: scale(0.95); }
+        
+        #status { 
+            color: white; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+            margin-top: 30px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- This is the small lizard in the corner -->
+    <img src="lizard.png" class="corner-lizard" alt="Lizard">
+
+    <div class="button-container">
+        <button class="soundBtn" data-sound="lizard-scream.mp3">AYAYAYAYAYYAYAYAYA</button>
+        <button class="soundBtn" data-sound="lizard-button-sound.mp3">LIZARD CHAT 💬</button>
+    </div>
+
+    <p id="status">Ready for release...</p>
+
+    <script>
+        const buttons = document.querySelectorAll('.soundBtn');
+        const status = document.getElementById('status');
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const audio = new Audio(btn.getAttribute('data-sound'));
+                audio.play();
+                status.innerText = "HELL WEEK IS OVER!!! ✌️🐧";
+            });
+        });
+    </script>
+</body>
+</html>
