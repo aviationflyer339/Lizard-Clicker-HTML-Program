@@ -21,19 +21,12 @@
             background-position: center top;
         }
 
-        /* The specific Lizard Photo at top-left */
-        .corner-lizard {
-            position: absolute;
-            background-image: url('background.png');
-            top: 20px;
-            left: 20px;
-            width: 100px;
-            height: auto;
-            border-radius: 10px;
-            border: 2px solid white; /* Adds a nice border to make it pop */
+        .button-container { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+            justify-content: center;
         }
-
-        .button-container { display: flex; gap: 20px; }
 
         .soundBtn {
             background-color: #f1e5d1; 
@@ -54,12 +47,23 @@
             margin-top: 30px; 
             font-weight: bold;
         }
+
+        /* Responsive Breakpoint: For Phones */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column; 
+                width: 80%;
+            }
+            .soundBtn {
+                width: 100%;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- This is the small lizard in the corner -->
-    <img src="lizard.png" class="corner-lizard" alt="Lizard">
+    <!-- Lizard removed -->
 
     <div class="button-container">
         <button class="soundBtn" data-sound="lizard-scream.mp3">AYAYAYAYAYYAYAYAYA</button>
