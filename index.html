@@ -6,68 +6,48 @@
     <title>Tom Lizard Soundboard</title>
     <style>
         body { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            height: 100vh; 
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            
-            /* Background Image covering the whole page */
-            background-color: #40fd6c; 
-            background-image: url('background.png'); 
-            background-size: cover;
-            background-position: calc(50% - 10px) top;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100vh; margin: 0; font-family: 'Arial', sans-serif;
+            background-color: #40fd6c; background-image: url('background.png'); 
+            background-size: cover; background-position: center top;
         }
-
-        .button-container { 
-            display: flex; 
-            gap: 20px; 
-            flex-wrap: wrap; 
-            justify-content: center;
-        }
+        .button-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 
         .soundBtn {
-            background-color: #f1e5d1; 
-            color: #333; 
-            padding: 20px 40px;
-            font-size: 20px; 
-            border: none; 
-            border-radius: 15px;
-            cursor: pointer; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.1s;
+            background-color: #f1e5d1; color: #333; 
+            padding: 15px 30px; /* Adjusted padding for image-button */
+            border: none; border-radius: 15px; cursor: pointer; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.1s;
         }
         .soundBtn:active { transform: scale(0.95); }
         
-        #status { 
-            color: white; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-            margin-top: 30px; 
-            font-weight: bold;
+        /* New CSS for the Image Icon */
+        .btn-icon {
+            width: 50px; /* Adjust size of lizard image */
+            height: auto;
+            display: block;
+            pointer-events: none; /* Ensures click registers on button */
         }
 
-        /* Responsive Breakpoint: For Phones */
+        #status { 
+            color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+            margin-top: 30px; font-weight: bold;
+        }
+
         @media (max-width: 600px) {
-            .button-container {
-                flex-direction: column; 
-                width: 80%;
-            }
-            .soundBtn {
-                width: 100%;
-                font-size: 18px;
-            }
+            .button-container { flex-direction: column; width: 80%; }
+            .soundBtn { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Lizard removed -->
-
     <div class="button-container">
         <button class="soundBtn" data-sound="lizard-scream.mp3">AYAYAYAYAYYAYAYAYA</button>
-        <button class="soundBtn" data-sound="lizard-button-sound.mp3">LIZARD CHAT 💬</button>
+        
+        <button class="soundBtn" data-sound="lizard-button-sound.mp3">
+            <img src="lizard.png" alt="Lizard Chat" class="btn-icon">
+        </button>
     </div>
 
     <p id="status">Ready for release...</p>
