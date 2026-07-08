@@ -44,11 +44,11 @@
 <body>
 
     <div class="button-container">
-        <button class="soundBtn" data-sound="lizard-scream.mp3">AYAYAYAYAYYAYAYAYA</button>
-        
         <button class="soundBtn" data-sound="lizard-button-sound.mp3">
             <img src="lizard-emoji.png" alt="Lizard Chat" class="btn-icon">
         </button>
+        <button class="soundBtn" data-sound="lizard-scream.mp3">AYAYAYAYAYYAYAYAYA</button>
+        
     </div>
 
     <p id="status">Ready for release...</p>
@@ -61,9 +61,10 @@
             btn.addEventListener('click', () => {
                 const audio = new Audio(btn.getAttribute('data-sound'));
                 audio.play();
-                status.innerText = "HELL WEEK IS OVER!!! ✌️🐧";
+                status.innerText = "GOODBYE HELL WEEKS!!! ✌️🐧";
             });
         });
     </script>
 </body>
 </html>
+
